@@ -30,8 +30,7 @@ public class RandomLaneGenerator : MonoBehaviour {
 	private GameObject[] musics;
 
 	void Start () {
-		gController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-
+	gController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         updateLaneArray();
         runDown = false;
         removeLane = false;
