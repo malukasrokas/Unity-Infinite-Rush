@@ -148,10 +148,10 @@ public class RandomLaneGenerator : MonoBehaviour {
         icon.enabled = !icon.enabled;
         yield return new WaitForSeconds(0.75f);
         icon.enabled = !icon.enabled;
-		yield return new WaitForSeconds(0.75f);
-		icon.enabled = !icon.enabled;
-		yield return new WaitForSeconds(0.75f);
-		icon.enabled = !icon.enabled;
+	yield return new WaitForSeconds(0.75f);
+	icon.enabled = !icon.enabled;
+	yield return new WaitForSeconds(0.75f);
+	icon.enabled = !icon.enabled;
         yield return new WaitForSeconds(1f);
         icon.enabled = !icon.enabled;
     }
@@ -196,18 +196,15 @@ public class RandomLaneGenerator : MonoBehaviour {
     
     void gameOver() {
         Time.timeScale = 0;
-
-		musics = GameObject.FindGameObjectsWithTag("MusicPlayer");
-
-		foreach(GameObject music in musics)
+	musics = GameObject.FindGameObjectsWithTag("MusicPlayer");
+	foreach(GameObject music in musics)
+	{
+		if (music.name == "BackgroundMusic")
 		{
-			if (music.name == "BackgroundMusic")
-			{
-				music.GetComponent<AudioSource> ().Stop ();
-			}
+			music.GetComponent<AudioSource> ().Stop ();
 		}
-
-		playAgainButton.SetActive(true);
+	}
+	playAgainButton.SetActive(true);
         menuButton.SetActive(true);
         gameOverText.enabled = true;
     }
